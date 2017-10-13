@@ -15,6 +15,7 @@ import android.widget.GridView;
 import android.widget.Toast;
 
 import cn.edu.gdmec.android.mobileguard.m1home.adapter.HomeAdapter;
+
 import cn.edu.gdmec.android.mobileguard.m2thefthgurd.LostFindActivity;
 import cn.edu.gdmec.android.mobileguard.m2thefthgurd.dialog.InterPasswordDialog;
 import cn.edu.gdmec.android.mobileguard.m2thefthgurd.dialog.SetUpPasswordDialog;
