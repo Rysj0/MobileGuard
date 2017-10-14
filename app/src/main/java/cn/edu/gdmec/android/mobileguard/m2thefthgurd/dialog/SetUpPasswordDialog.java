@@ -11,10 +11,6 @@ import android.widget.TextView;
 
 import cn.edu.gdmec.android.mobileguard.R;
 
-/**
- * Created by asus on 2017/9/28.
- */
-
 public class SetUpPasswordDialog  extends Dialog implements View.OnClickListener{
 
     /**标题栏*/

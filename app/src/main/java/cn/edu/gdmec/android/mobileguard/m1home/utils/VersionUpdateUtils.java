@@ -58,8 +58,8 @@ public class VersionUpdateUtils {
 
     };
 
-    public VersionUpdateUtils(String mVersion, Activity context) {
-        this.mVersion = mVersion;
+    public VersionUpdateUtils(String version, Activity context) {
+        mVersion = version;
         this.context = context;
     }
     public void getCloudVersion(){

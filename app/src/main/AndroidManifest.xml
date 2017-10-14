@@ -18,7 +18,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="cn.edu.gdmec.android.mobileguard.m1home.HomeActivity"/>
+        <activity android:name=".m1home.HomeActivity"/>
         <activity android:name=".m2thefthgurd.LostFindActivity"/>
         <activity android:name=".m2thefthgurd.Setup1Activity"/>
         <activity android:name=".m2thefthgurd.Setup2Activity"/>
