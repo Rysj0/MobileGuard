@@ -1,10 +1,11 @@
 package cn.edu.gdmec.android.mobileguard.m2theftguard.utils;
+
+
 import android.os.Bundle;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
 import cn.edu.gdmec.android.mobileguard.R;
-
 
 public class Setup1Activity extends BaseSetUpActivity {
     @Override
@@ -21,6 +22,6 @@ public class Setup1Activity extends BaseSetUpActivity {
 
     @Override
     public void showPre(){
-        Toast.makeText(this,"当前页面已经是第一页",Toast.LENGTH_LONG).show();
+        Toast.makeText(this,"当前页面已经是第一页", Toast.LENGTH_LONG).show();
     }
 }

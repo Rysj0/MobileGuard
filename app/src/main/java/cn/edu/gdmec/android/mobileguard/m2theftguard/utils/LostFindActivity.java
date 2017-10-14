@@ -1,10 +1,11 @@
 package cn.edu.gdmec.android.mobileguard.m2theftguard.utils;
+
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import cn.edu.gdmec.android.mobileguard.R;
-
 
 public class LostFindActivity extends AppCompatActivity {
     @Override

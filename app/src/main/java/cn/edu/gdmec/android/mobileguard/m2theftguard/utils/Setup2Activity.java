@@ -1,9 +1,10 @@
 package cn.edu.gdmec.android.mobileguard.m2theftguard.utils;
+
+
 import android.os.Bundle;
 import android.widget.RadioButton;
 
 import cn.edu.gdmec.android.mobileguard.R;
-
 
 public class Setup2Activity extends BaseSetUpActivity {
     @Override

@@ -1,12 +1,10 @@
 package cn.edu.gdmec.android.mobileguard.m1home;
 
+
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-
-import cn.edu.gdmec.android.mobileguard.R;
-
+import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.View;
@@ -14,6 +12,7 @@ import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.Toast;
 
+import cn.edu.gdmec.android.mobileguard.R;
 import cn.edu.gdmec.android.mobileguard.m1home.adapter.HomeAdapter;
 import cn.edu.gdmec.android.mobileguard.m2theftguard.dialog.InterPasswordDialog;
 import cn.edu.gdmec.android.mobileguard.m2theftguard.dialog.SetUpPasswordDialog;
@@ -35,7 +34,7 @@ public class HomeActivity extends AppCompatActivity {
         gv_home.setAdapter(new HomeAdapter(HomeActivity.this));
         gv_home.setOnItemClickListener(new AdapterView.OnItemClickListener(){
             @Override
-            public void onItemClick(AdapterView<?> adapterView,View view,int i,long l){
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l){
                 System.out.print(i);
                 switch (i){
                     case 0:

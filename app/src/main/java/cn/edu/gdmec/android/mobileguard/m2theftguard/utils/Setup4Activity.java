@@ -1,13 +1,10 @@
 package cn.edu.gdmec.android.mobileguard.m2theftguard.utils;
 
+
 import android.os.Bundle;
 import android.widget.RadioButton;
 
 import cn.edu.gdmec.android.mobileguard.R;
-import cn.edu.gdmec.android.mobileguard.m2theftguard.utils.BaseSetUpActivity;
-import cn.edu.gdmec.android.mobileguard.m2theftguard.utils.LostFindActivity;
-import cn.edu.gdmec.android.mobileguard.m2theftguard.utils.Setup3Activity;
-
 
 public class Setup4Activity extends BaseSetUpActivity {
     @Override
