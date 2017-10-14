@@ -15,10 +15,10 @@ import android.widget.GridView;
 import android.widget.Toast;
 
 import cn.edu.gdmec.android.mobileguard.m1home.adapter.HomeAdapter;
-import cn.edu.gdmec.android.mobileguard.m2thefthgurd.LostFindActivity;
-import cn.edu.gdmec.android.mobileguard.m2thefthgurd.dialog.InterPasswordDialog;
-import cn.edu.gdmec.android.mobileguard.m2thefthgurd.dialog.SetUpPasswordDialog;
-import cn.edu.gdmec.android.mobileguard.m2thefthgurd.utils.MD5Utils;
+import cn.edu.gdmec.android.mobileguard.m2theftguard.LostFindActivity;
+import cn.edu.gdmec.android.mobileguard.m2theftguard.dialog.InterPasswordDialog;
+import cn.edu.gdmec.android.mobileguard.m2theftguard.dialog.SetUpPasswordDialog;
+import cn.edu.gdmec.android.mobileguard.m2theftguard.utils.MD5Utils;
 
 public class HomeActivity extends AppCompatActivity {
     private GridView gv_home;
