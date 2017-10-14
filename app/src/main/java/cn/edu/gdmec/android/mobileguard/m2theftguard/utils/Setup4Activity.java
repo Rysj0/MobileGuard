@@ -6,9 +6,6 @@ import android.widget.RadioButton;
 
 import cn.edu.gdmec.android.mobileguard.R;
 
-/**
- * Created by Administrator on 2017/10/11.
- */
 
 public class Setup4Activity extends BaseSetUpActivity {
     @Override

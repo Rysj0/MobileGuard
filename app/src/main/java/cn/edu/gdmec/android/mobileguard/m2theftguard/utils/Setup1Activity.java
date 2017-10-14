@@ -6,10 +6,6 @@ import android.widget.Toast;
 
 import cn.edu.gdmec.android.mobileguard.R;
 
-/**
- * Created by Administrator on 2017/10/11.
- */
-
 public class Setup1Activity extends BaseSetUpActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState){

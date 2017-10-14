@@ -3,10 +3,6 @@ package cn.edu.gdmec.android.mobileguard.m2theftguard.utils;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-/**
- * Created by asus on 2017/9/28.
- */
-
 public class MD5Utils {
     public static String encode(String text){
         try{

@@ -7,9 +7,6 @@ import android.support.v7.app.AppCompatActivity;
 import cn.edu.gdmec.android.mobileguard.R;
 
 
-/**
- * Created by Administrator on 2017/10/11.
- */
 
 public class LostFindActivity extends AppCompatActivity {
     @Override
