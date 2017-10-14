@@ -6,21 +6,24 @@ import android.widget.RadioButton;
 
 import cn.edu.gdmec.android.mobileguard.R;
 
+/**
+ * Created by Administrator on 2017/10/11.
+ */
+
 public class Setup4Activity extends BaseSetUpActivity {
     @Override
-    protected void  onCreate(Bundle saveInstanceState){
-        super.onCreate(saveInstanceState);
+    protected void onCreate(Bundle savedInstanceState){
+        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setup_4);
-        //设置第2个小圆点的颜色
-        ((RadioButton) findViewById(R.id.rb_four)).setChecked(true);
+        ((RadioButton)findViewById(R.id.rb_four)).setChecked(true);
     }
     @Override
-    public void showNext(){
+    public void showNext() {
         startActivityAndFinishSelf(LostFindActivity.class);
     }
 
     @Override
-    public void showPre(){
+    public void showPre() {
         startActivityAndFinishSelf(Setup3Activity.class);
     }
 }
