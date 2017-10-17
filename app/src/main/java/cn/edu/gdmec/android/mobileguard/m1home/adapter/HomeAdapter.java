@@ -1,8 +1,6 @@
 package cn.edu.gdmec.android.mobileguard.m1home.adapter;
 
-/**
- * Created by asus on 2017/9/24.
- */
+
 import android.content.Context;
  import android.view.View;
  import android.view.ViewGroup;
@@ -12,9 +10,7 @@ import android.content.Context;
 
 import cn.edu.gdmec.android.mobileguard.R;
 
- /**
-  * Created by Administrator on 2017/9/19.
-  */
+
 
  public class HomeAdapter extends BaseAdapter {
      private Context context;

@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -20,7 +21,7 @@
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:layout_centerInParent="true"
-                android:background="@drawable/add"/>
+                android:background="@drawable/add" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -30,7 +31,7 @@
                 android:gravity="center"
                 android:text="SIM卡绑定"
                 android:textColor="@android:color/white"
-                android:textSize="18sp"/>
+                android:textSize="18sp" />
         </RelativeLayout>
 
         <LinearLayout
@@ -46,7 +47,7 @@
                 android:layout_height="60dp"
                 android:layout_gravity="center_vertical|left"
                 android:layout_marginLeft="15dp"
-                android:background="@drawable/recomand_icon"/>
+                android:background="@drawable/recomand_icon" />
 
             <TextView
                 style="@style/textview16sp"
@@ -55,7 +56,7 @@
                 android:lineSpacingMultiplier="1.5"
                 android:text="绑定SIm卡后，再次重启手机时，若SIm卡发生变化，手机卫士会发送报警信息给安全号码"
                 android:textColor="@color/purple"
-                android:textScaleX="1.1"/>
+                android:textScaleX="1.1" />
 
         </LinearLayout>
 
@@ -73,7 +74,7 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginBottom="20dp"
                 android:background="@drawable/sim_bind_selector"
-                android:gravity="center"/>
+                android:gravity="center" />
         </LinearLayout>
     </LinearLayout>
 
