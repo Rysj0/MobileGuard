@@ -37,7 +37,10 @@ public class ContactInfoParser {
                 while (dataCursor.moveToNext()){
                     String data1 = dataCursor.getString(0);
                     String mimetype = dataCursor.getString(1);
-                    if ("vnd.android.cursor.item/phone_v2".equals(mimetype)){
+                    if ("vnd.android.cursor.item/name".equals(mimetype)){
+                        System.out.println("姓名=" + data1);
+                        info.name = data1;
+                    }else if("vnd.android.cursor.item/phone_v2".equals(mimetype)){
                         System.out.println("电话=" + data1);
                         info.phone = data1;
                     }
