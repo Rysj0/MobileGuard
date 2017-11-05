@@ -1,16 +1,17 @@
 package cn.edu.gdmec.android.mobileguard.m3communicationguard.entity;
 
 /**
- * Created by asus on 2017/11/5.
+ * Created by asus on 2017/11/1.
  */
 
 public class BlackContactInfo {
-    /*黑名单号码*/
+    //黑名单号码
     public String phoneNumber;
-    /*黑名单联系人*/
-    public  String contactName;
-    /*黑名单拦截模式,1为电话拦截 2为短信拦截 3微电话短信都拦截*/
+    //黑名单联系人名称
+    public String contactName;
+    //黑名单拦截模式
     public int mode;
+
     public String getModeString(int mode){
         switch (mode){
             case 1:
@@ -23,4 +24,3 @@ public class BlackContactInfo {
         return "";
     }
 }
-
