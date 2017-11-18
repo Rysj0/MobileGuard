@@ -5,5 +5,4 @@ public class VersionEntity {
     public String description;
     public String apkurl;
 
-
 }
