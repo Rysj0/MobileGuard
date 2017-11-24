@@ -102,6 +102,8 @@
         </receiver>
         <activity android:name=".m5virusscan.VirusScanSpeedActivity" />
         <activity android:name=".m5virusscan.VirusScanActivity"></activity>
+        <activity android:name=".m6cleancache.CleanCacheActivity"></activity>
+        <activity android:name=".m6cleancache.CacheClearListActivity"></activity>
 
     </application>
 
