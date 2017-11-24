@@ -80,9 +80,19 @@
             android:layout_height="match_parent"
             android:background="@color/black30"/>
         <TextView
-            android:id="@+id/tv_abouticon_app"
+            android:id="@+id/tv_about_app"
             style="@style/tvyellow14sp"
             android:drawableTop="@drawable/abouticon_yellow_n"
             android:text="关于"/>
+        <!--课堂练习添加活动-->
+        <View
+            android:layout_width="1px"
+            android:layout_height="match_parent"
+            android:background="@color/black30"/>
+        <TextView
+            android:id="@+id/tv_act_app"
+            style="@style/tvyellow14sp"
+            android:text="活动"
+            android:drawableTop="@drawable/abouticon_yellow_a"/>
     </LinearLayout>
 </LinearLayout>

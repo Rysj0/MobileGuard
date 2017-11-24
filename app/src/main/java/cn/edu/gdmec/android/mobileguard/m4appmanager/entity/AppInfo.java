@@ -8,9 +8,6 @@ import android.graphics.drawable.Drawable;
 
 public class AppInfo {
     public String version;
-    public String installTime;
-    public String certifi;
-    public String permisstion;
     //应用程序包名
     public String packageName;
     //应用程序图标
