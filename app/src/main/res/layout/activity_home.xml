@@ -16,7 +16,7 @@
         <ImageView
             android:layout_width="100dp"
             android:layout_height="107dp"
-            android:background="@drawable/supermen"
+            android:background="@drawable/superman"
             android:scaleType="fitXY" />
 
         <TextView

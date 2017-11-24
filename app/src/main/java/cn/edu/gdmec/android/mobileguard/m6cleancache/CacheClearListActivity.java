@@ -34,41 +34,41 @@ import cn.edu.gdmec.android.mobileguard.m6cleancache.entity.CacheInfo;
  */
 
 public class CacheClearListActivity extends AppCompatActivity implements View.OnClickListener{
-    protected static final int SCANNING = 100;
+    protected static final int SCANNING =100;
     protected static final int FINISH = 101;
     private AnimationDrawable animation;
-    //建议清理
+    /*建议清理*/
     private TextView mRecomandTV;
-    //可清理
+    /*可清理*/
     private TextView mCanCleanTV;
     private long cacheMemory;
-    private List<CacheInfo> cacheInfos = new ArrayList<CacheInfo>();
-    private List<CacheInfo> mCacheInfos = new ArrayList<CacheInfo>();
+    private List<CacheInfo> cacheInfos = new ArrayList<>();
+    private List<CacheInfo> mcacheInfos = new ArrayList<>();
     private PackageManager pm;
     private CacheCleanAdapter adapter;
-    private ListView mCacheLV;
+    private ListView  mCacheLV;
     private Button mCacheBtn;
     private Thread thread;
     private Handler handler = new Handler(){
         @Override
-        public void handleMessage(Message msg){
+        public void handleMessage(Message msg) {
             switch (msg.what){
                 case SCANNING:
-                    PackageInfo info = (PackageInfo) msg.obj;
-                    mRecomandTV.setText("正在扫描:"+info.packageName);
-                    mCanCleanTV.setText("已扫描缓存:"+
+                    PackageInfo info = (PackageInfo)msg.obj;
+                    mRecomandTV.setText("正在扫描："+info.packageName);
+                    mCanCleanTV.setText("已扫描缓存："+
                             Formatter.formatFileSize(CacheClearListActivity.this,cacheMemory));
-                    //在主线程添加变化后集合
-                    mCacheInfos.clear();
-                    mCacheInfos.addAll(cacheInfos);
-                    //刷新
+                    //在主线程添加变化后的集合
+                    mcacheInfos.clear();
+                    mcacheInfos.addAll(cacheInfos);
+                    //ListView  刷新
                     adapter.notifyDataSetChanged();
-                    mCacheLV.setSelection(mCacheInfos.size());
+                    mCacheLV.setSelection(mcacheInfos.size());
                     break;
                 case FINISH:
                     //扫描完了，动画停止
                     animation.stop();
-                    if (cacheMemory > 0){
+                    if (cacheMemory>0){
                         mCacheBtn.setEnabled(true);
                     }else {
                         mCacheBtn.setEnabled(false);
@@ -79,43 +79,46 @@ public class CacheClearListActivity extends AppCompatActivity implements View.On
         }
     };
     @Override
-    protected void onCreate(Bundle savedInstaceState){
-        super.onCreate(savedInstaceState);
+    protected void onCreate(Bundle savedInstanceState){
+        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cache_clear_list);
         pm = getPackageManager();
         initView();
+
     }
-    //初始化控件
+    /*初始化控件*/
     private void initView(){
         findViewById(R.id.rl_titlebar).setBackgroundColor(
                 getResources().getColor(R.color.rose_red));
-        ImageView mLeftImgv = (ImageView) findViewById(R.id.imgv_leftbtn);
+        ImageView mLeftImgv = (ImageView)findViewById(R.id.imgv_leftbtn);
         mLeftImgv.setOnClickListener(this);
         mLeftImgv.setImageResource(R.drawable.back);
         ((TextView) findViewById(R.id.tv_title)).setText("缓存扫描");
-        mRecomandTV = (TextView) findViewById(R.id.tv_recommend_clean);
-        mCanCleanTV = (TextView) findViewById(R.id.tv_can_clean);
-        mCacheLV = (ListView) findViewById(R.id.lv_scancache);
-        mCacheBtn = (Button) findViewById(R.id.btn_cleanall);
+        mRecomandTV = (TextView)findViewById(R.id.tv_recommend_clean);
+        mCanCleanTV = (TextView)findViewById(R.id.tv_can_clean);
+        mCacheLV = (ListView)findViewById(R.id.lv_scancache);
+        mCacheBtn = (Button)findViewById(R.id.btn_cleanall);
         mCacheBtn.setOnClickListener(this);
-        animation = (AnimationDrawable) findViewById(R.id.imgv_broom).getBackground();
+        animation = (AnimationDrawable)findViewById(R.id.imgv_broom).getBackground();
         animation.setOneShot(false);
         animation.start();
-        adapter = new CacheCleanAdapter(this,mCacheInfos);
+        adapter = new CacheCleanAdapter(this,mcacheInfos);
         mCacheLV.setAdapter(adapter);
         fillData();
+
     }
-    //填充数据
+    /*填充数据*/
     private void fillData(){
         thread = new Thread(){
-            public void run(){
-                //遍历手机里面的所有的应用程序
+            @Override
+            public void run() {
                 cacheInfos.clear();
                 List<PackageInfo> infos = pm.getInstalledPackages(0);
-                for (PackageInfo info:infos) {
+                for (PackageInfo info : infos){
                     getCacheSize(info);
                     try {
                         Thread.sleep(50);
+
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -127,28 +130,34 @@ public class CacheClearListActivity extends AppCompatActivity implements View.On
                 Message msg = Message.obtain();
                 msg.what = FINISH;
                 handler.sendMessage(msg);
+
             };
+
         };
-            thread.start();
+        thread.start();
+
     }
-    //获取某个包名对应的应用程序的缓存大小
+    /*获取某个包名对应的应用程序的缓存大小*/
     public void getCacheSize(PackageInfo info){
-        try{
+        try {
             Method method = PackageManager.class.getDeclaredMethod(
                     "getPackageSizeInfo",String.class,
                     IPackageStatsObserver.class);
             method.invoke(pm,info.packageName,new MyPackObserver(info));
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
-    private class MyPackObserver extends android.content.pm.IPackageStatsObserver.Stub{
+    private class MyPackObserver extends
+            android.content.pm.IPackageStatsObserver.Stub{
         private PackageInfo info;
-        public MyPackObserver(PackageInfo info){
+
+        public MyPackObserver(PackageInfo info) {
             this.info = info;
         }
+
         @Override
-        public void onGetStatsCompleted(PackageStats pStats,boolean succeeded) throws RemoteException{
+        public void onGetStatsCompleted(PackageStats pStats, boolean succeeded) throws RemoteException {
             long cachesize = pStats.cacheSize;
             if (cachesize >= 0){
                 CacheInfo cacheInfo = new CacheInfo();
@@ -156,12 +165,10 @@ public class CacheClearListActivity extends AppCompatActivity implements View.On
                 cacheInfo.packagename = info.packageName;
                 cacheInfo.appName = info.applicationInfo.loadLabel(pm).toString();
                 cacheInfo.appIcon = info.applicationInfo.loadIcon(pm);
-                mCacheInfos.add(cacheInfo);
+                cacheInfos.add(cacheInfo);
                 cacheMemory += cachesize;
             }
         }
-
-
     }
     @Override
     public void onClick(View view) {
@@ -171,7 +178,7 @@ public class CacheClearListActivity extends AppCompatActivity implements View.On
                 break;
             case R.id.btn_cleanall:
                 if (cacheMemory > 0){
-                    //跳转至清除缓存页面的activity
+                    //跳转至清理缓存的页面的Activity
                     Intent intent = new Intent(this,CleanCacheActivity.class);
                     //将要清理的垃圾大小传递至另一页面
                     intent.putExtra("cacheMemory",cacheMemory);
@@ -180,6 +187,7 @@ public class CacheClearListActivity extends AppCompatActivity implements View.On
                 }
                 break;
         }
+
     }
     @Override
     protected void onDestroy(){
