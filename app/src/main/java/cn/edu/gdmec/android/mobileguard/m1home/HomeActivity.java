@@ -25,7 +25,7 @@ import cn.edu.gdmec.android.mobileguard.m3communicationguard.SecurityPhoneActivi
 import cn.edu.gdmec.android.mobileguard.m4appmanager.AppManagerActivity;
 import cn.edu.gdmec.android.mobileguard.m5virusscan.VirusScanActivity;
 import cn.edu.gdmec.android.mobileguard.m6cleancache.CacheClearListActivity;
-import cn.edu.gdmec.android.mobileguard.m6cleancache.CleanCacheActivity;
+import cn.edu.gdmec.android.mobileguard.m8trafficmonitor.TrafficMonitoringActivity;
 
 public class HomeActivity extends AppCompatActivity {
     private GridView gv_home;
@@ -50,24 +50,33 @@ public class HomeActivity extends AppCompatActivity {
                 System.out.print(i);
                 switch (i){
                     case 0:
+                        // 点击手机防盗
                         if(isSetUpPassword()){
+                            // 弹出输入密码对话框
                             showInterPswdDialog();
                         }else{
+                            // 弹出设置密码对话框
                             showSetUpPswdDialog();
                         }
                         break;
                     case 1:
+                        //点击通讯卫士
                         startActivity(SecurityPhoneActivity.class);
                         break;
                     case 2:
+                        //软件管家
                         startActivity(AppManagerActivity.class);
                         break;
                     case 3:
                         startActivity(VirusScanActivity.class);
                         break;
                     case 4:
+                        //缓存清理
                         startActivity(CacheClearListActivity.class);
                         break;
+                    case 6:
+                        //流量统计
+                        startActivity ( TrafficMonitoringActivity.class );
                 }
             }
         });

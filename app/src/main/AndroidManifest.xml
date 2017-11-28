@@ -7,10 +7,14 @@
     <uses-sdk
         android:minSdkVersion="15"
         android:targetSdkVersion="24" />
-
+    <!--模块5-->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!--手机杀毒部分-->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <!--m1-->
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
     <uses-permission android:name="android.permission.SEND_SMS" />
@@ -106,6 +110,9 @@
         <activity android:name=".m5virusscan.VirusScanActivity"></activity>
         <activity android:name=".m6cleancache.CleanCacheActivity"></activity>
         <activity android:name=".m6cleancache.CacheClearListActivity"></activity>
+        <!--m8-->
+        <activity android:name=".m8trafficmonitor.OperatorSetActivity"/>
+        <activity android:name=".m8trafficmonitor.TrafficMonitoringActivity"/>
 
 
     </application>
