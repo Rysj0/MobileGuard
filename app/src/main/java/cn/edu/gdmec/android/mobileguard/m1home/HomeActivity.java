@@ -78,6 +78,7 @@ public class HomeActivity extends AppCompatActivity {
                     case 6:
                         //流量统计
                         startActivity ( TrafficMonitoringActivity.class );
+                        break;
                     case 7:
                         startActivity(AdvancedToolsActivity.class);
                         break;
