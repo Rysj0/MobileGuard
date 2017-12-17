@@ -5,7 +5,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.text.TextUtils;
 
 /**
- * Created by ASUS PRO on 2017/12/8.
+ * Created by Jack on 2017/12/3.
+ * 查询号码归属地的数据库逻辑类
  */
 
 public class NumBelongtoDao {

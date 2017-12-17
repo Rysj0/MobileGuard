@@ -1,7 +1,7 @@
 package cn.edu.gdmec.android.mobileguard.m9advancedtools.widget;
 
 /**
- * Created by ASUS PRO on 2017/12/8.
+ * Created by Jack on 2017/12/3.
  */
 
 import android.content.Context;
@@ -15,7 +15,7 @@ import android.widget.TextView;
 
 import cn.edu.gdmec.android.mobileguard.R;
 
-public class AdvancedToolsView extends RelativeLayout{
+public class AdvancedToolsView extends RelativeLayout {
 
     private TextView mDesriptionTV;
     private String desc = "";
@@ -55,3 +55,4 @@ public class AdvancedToolsView extends RelativeLayout{
         if(drawable != null)mLeftImgv.setImageDrawable(drawable);
     }
 }
+

@@ -1,7 +1,7 @@
 package cn.edu.gdmec.android.mobileguard.m9advancedtools;
 
 /**
- * Created by ASUS PRO on 2017/12/8.
+ * Created by Jack on 2017/12/3.
  */
 
 import android.app.Activity;
@@ -26,7 +26,7 @@ import java.io.InputStream;
 import cn.edu.gdmec.android.mobileguard.R;
 import cn.edu.gdmec.android.mobileguard.m9advancedtools.db.dao.NumBelongtoDao;
 
-public class NumBelongtoActivity extends Activity implements OnClickListener{
+public class NumBelongtoActivity extends Activity implements OnClickListener {
     /**归属地查询*/
     private EditText mNumET;
     private TextView mResultTV;
