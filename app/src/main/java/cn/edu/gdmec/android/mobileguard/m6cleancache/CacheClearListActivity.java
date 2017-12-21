@@ -42,8 +42,8 @@ public class CacheClearListActivity extends AppCompatActivity implements View.On
     /*可清理*/
     private TextView mCanCleanTV;
     private long cacheMemory;
-    private List<CacheInfo> cacheInfos = new ArrayList<>();
-    private List<CacheInfo> mcacheInfos = new ArrayList<>();
+    private List<CacheInfo> cacheInfos = new ArrayList<CacheInfo>();
+    private List<CacheInfo> mcacheInfos = new ArrayList<CacheInfo>();
     private PackageManager pm;
     private CacheCleanAdapter adapter;
     private ListView  mCacheLV;
