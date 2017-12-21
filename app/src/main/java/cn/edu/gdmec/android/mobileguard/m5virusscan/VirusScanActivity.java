@@ -9,6 +9,7 @@ import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -28,6 +29,8 @@ public class VirusScanActivity extends AppCompatActivity implements View.OnClick
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature( Window.FEATURE_NO_TITLE);
+        getSupportActionBar ().hide (); //去掉标题栏
         setContentView(R.layout.activity_virus_scan);
         mSP = getSharedPreferences("config", MODE_PRIVATE);
         copyDB("antivirus.db","");
@@ -120,6 +123,7 @@ public class VirusScanActivity extends AppCompatActivity implements View.OnClick
         mLeftImgv.setImageResource(R.drawable.back);
         mLastTimeTV = (TextView) findViewById(R.id.tv_lastscantime);
         findViewById(R.id.rl_allscanvirus).setOnClickListener(this);
+        findViewById ( R.id.rl_cloudscanvirus ).setOnClickListener ( this );
     }
     @Override
     public void onClick(View view) {
@@ -130,6 +134,11 @@ public class VirusScanActivity extends AppCompatActivity implements View.OnClick
             case R.id.rl_allscanvirus:
                 startActivity(new Intent(this,VirusScanSpeedActivity.class));
                 break;
+            case R.id.rl_cloudscanvirus:
+                Intent intent = new Intent ( this,VirusScanSpeedActivity.class );
+                intent.putExtra ( "cloud", true );
+
+                startActivity ( intent );
         }
     }
 }

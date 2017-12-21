@@ -25,17 +25,12 @@ import cn.edu.gdmec.android.mobileguard.m9advancedtools.db.dao.AppLockDao;
 import cn.edu.gdmec.android.mobileguard.m9advancedtools.entity.AppInfo;
 import cn.edu.gdmec.android.mobileguard.m9advancedtools.utils.AppInfoParser;
 
-/**
- * Created by Jack on 2017/12/3.
- */
-
-
 public class AppLockFragment extends Fragment {
     private Context context;
     private TextView mLockTV;
     private ListView mLockLV;
     private AppLockDao dao;
-    List<AppInfo> mLockApps = new ArrayList<AppInfo>();
+    List<AppInfo> mLockApps = new ArrayList<AppInfo> ();
     private AppLockAdapter adapter;
     //private Uri uri = Uri.parse(App.APPLOCK_CONTENT_URI);
     private Uri uri = Uri.parse("content://cn.edu.gdmec.android.mobileguard.m9advancedtools.applock");
@@ -57,7 +52,7 @@ public class AppLockFragment extends Fragment {
         };
     };
     private List<AppInfo> appInfos;
-//模块
+    //模块
     @Override
     public void onAttach(Context context){
         super.onAttach ( context );
@@ -79,7 +74,7 @@ public class AppLockFragment extends Fragment {
         appInfos = AppInfoParser.getAppInfos(getActivity());
         fillData();
         initListener();
-        getActivity().getContentResolver().registerContentObserver(uri, true, new ContentObserver(new Handler()) {
+        getActivity().getContentResolver().registerContentObserver(uri, true, new ContentObserver (new Handler()) {
             @Override
             public void onChange(boolean selfChange) {
                 fillData();
@@ -141,4 +136,3 @@ public class AppLockFragment extends Fragment {
         });
     }
 }
-

@@ -1,5 +1,6 @@
 package cn.edu.gdmec.android.mobileguard.m9advancedtools.db.dao;
 
+
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -10,10 +11,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import cn.edu.gdmec.android.mobileguard.m9advancedtools.db.AppLockOpenHelper;
-
-/**
- * Created by Jack on 2017/12/3.
- */
 
 public class AppLockDao {
     /** 程序锁数据库操作逻辑类 */
@@ -80,7 +77,7 @@ public class AppLockDao {
     public List<String> findAll(){
         SQLiteDatabase db = openHelper.getReadableDatabase();
         Cursor cursor = db.query("applock", null, null, null, null, null, null);
-        List<String> packages = new ArrayList<String>();
+        List<String> packages = new ArrayList<String> ();
         while (cursor.moveToNext()) {
             String string = cursor.getString(cursor.getColumnIndex("packagename"));
             packages.add(string);

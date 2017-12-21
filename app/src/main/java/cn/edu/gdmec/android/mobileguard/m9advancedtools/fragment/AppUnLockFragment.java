@@ -24,11 +24,6 @@ import cn.edu.gdmec.android.mobileguard.m9advancedtools.db.dao.AppLockDao;
 import cn.edu.gdmec.android.mobileguard.m9advancedtools.entity.AppInfo;
 import cn.edu.gdmec.android.mobileguard.m9advancedtools.utils.AppInfoParser;
 
-/**
- * Created by Jack on 2017/12/3.
- */
-
-
 public class AppUnLockFragment extends Fragment {
 
     private TextView mUnLockTV;

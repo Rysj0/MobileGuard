@@ -4,11 +4,6 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.text.TextUtils;
 
-/**
- * Created by Jack on 2017/12/3.
- * 查询号码归属地的数据库逻辑类
- */
-
 public class NumBelongtoDao {
     /**
      * 返回电话号码的归属地

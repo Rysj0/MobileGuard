@@ -7,10 +7,12 @@ import android.os.Bundle;
 import android.os.Process;
 import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Window;
 import android.widget.TextView;
 
 import cn.edu.gdmec.android.mobileguard.m1home.HomeActivity;
 import cn.edu.gdmec.android.mobileguard.m1home.utils.Myutils;
+import cn.edu.gdmec.android.mobileguard.m1home.utils.VersionUpdateUtils;
 
 public class SplashActivity extends AppCompatActivity {
     private TextView mTvTextView;
@@ -35,6 +37,25 @@ public class SplashActivity extends AppCompatActivity {
                     MY_PERMISSIONS_REQUEST_PACKAGE_USAGE_STATS
             );
         }
+
+        //更新apk
+        VersionUpdateUtils.DownloadCallback downloadCallback = new VersionUpdateUtils.DownloadCallback() {
+            @Override
+            public void afterDownload(String filename) {
+                Myutils.installApk(SplashActivity.this,filename);
+            }
+        };
+        final VersionUpdateUtils versionUpdateUtils=new VersionUpdateUtils(mVersion,SplashActivity.this,downloadCallback,HomeActivity.class);
+
+
+        new Thread(){
+            @Override
+            public void run(){
+                super.run();
+                versionUpdateUtils.getCloudVersion("http://android2017.duapp.com/updateinfo.html");
+
+            }
+        }.start();
           /*final VersionUpdateUtils versionUpdateUtils = new VersionUpdateUtils(mVersion,SplashActivity.this);
         new Thread(){
             @Override
@@ -44,9 +65,9 @@ public class SplashActivity extends AppCompatActivity {
             }
         }
 
-        .start();*/
+        .start();
         startActivity(new Intent(this, HomeActivity.class));
-        finish();
+        finish();*/
     }
     private boolean hasPermission(){
         AppOpsManager appOps = (AppOpsManager)

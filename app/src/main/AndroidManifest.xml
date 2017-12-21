@@ -31,8 +31,7 @@
     <!--高级工具程序锁部分-->
     <uses-permission
         android:name="android.permission.PACKAGE_USAGE_STATS"
-        tools:ignore="ProtectedPermission"/>
-
+        tools:ignore="ProtectedPermissions" />
     <application
         android:name="cn.edu.gdmec.android.mobileguard.App"
         android:allowBackup="false"
@@ -40,14 +39,13 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
-        <activity android:name="cn.edu.gdmec.android.mobileguard.m1home.HomeActivity" >
+        <activity android:name="cn.edu.gdmec.android.mobileguard.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="cn.edu.gdmec.android.mobileguard.SplashActivity" />
+        <activity android:name="cn.edu.gdmec.android.mobileguard.m1home.HomeActivity" />
         <activity android:name="cn.edu.gdmec.android.mobileguard.m2theftguard.LostFindActivity" />
         <activity android:name="cn.edu.gdmec.android.mobileguard.m2theftguard.Setup1Activity" />
         <activity android:name="cn.edu.gdmec.android.mobileguard.m2theftguard.Setup2Activity" />
