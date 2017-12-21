@@ -75,7 +75,7 @@ public class SplashActivity extends AppCompatActivity {
         int mode = 0;
         if (Build.VERSION.SDK_INT > Build.VERSION_CODES.KITKAT){
             mode = appOps.checkOpNoThrow ( AppOpsManager.OPSTR_GET_USAGE_STATS,
-                    Process.myUid (), getPackageName ());
+                    Process.myUid(), getPackageName ());
         }
         return mode == AppOpsManager.MODE_ALLOWED;
     }
